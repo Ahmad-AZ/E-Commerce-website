@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts::header"></head>
+
+
+
+
+<body>
+<nav th:replace="layouts :: Navbar" ></nav>
+
+<br>
+<br>
+<br>
+
+
+<div   th:method="get"  class="grid-container">
+
+
+
+
+    <div class="card"  th:each="items: ${itemsList}"  >
+        <div class="image">
+            <img th:src="@{/IMG/{imgName}.jpg(imgName=${items.image})} "  th:alt="${items.name}"  style="width: 100%">
+        </div><br>
+        <label class="card-title" th:text="${items.name}"></label>
+
+        <p  th:text="${items.description}"> </p>
+
+        <div class="buy d-flex justify-content-between align-items-center">
+            <div class="price text-success"><h6 class="mt-2" th:text="  '€'+${items.price}" ></h6></div>
+
+            <a th:href="@{/cart/saveItem/{id}(id=${items.id})}" class="btn btn-danger mt-3" ><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

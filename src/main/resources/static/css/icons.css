@@ -1,0 +1,12 @@
+
+.fa fa-remove {
+    background-color: gray;
+    color: white;
+    font-size: 6px;
+    cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.fa fa-remove:hover {
+    background-color: darkgray;
+}

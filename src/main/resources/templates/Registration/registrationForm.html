@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts::header"></head>
+
+
+
+<body>
+
+
+    <nav th:replace="layouts :: Navbar" ></nav>
+
+
+
+
+
+        <div class="container"><br><br>
+
+            <form action="/customer/save" th:object="${registration}" method="post">
+                <fieldset>
+                    <div class="input">
+
+                        <label >First Name:</label>
+                        <input th:type="text" th:field="${registration.firstName}"><br>
+                    </div>
+
+
+                    <div class="input">
+                        <label>Last Name:</label>
+                        <input th:type="text" th:field="${registration.lastName}"><br>
+                    </div>
+
+                    <div class="input">
+                        <label>E-Mail:</label>
+                        <input th:type="text" th:field="${registration.email}"><br>
+                    </div>
+
+                    <div class="input">
+
+                        <label>Password: </label>
+                        <input th:type="password" th:field="${registration.password}"><br>
+                    </div>
+
+                    <div class="input">
+                        <label>Birthday: </label>
+                        <input th:type="date" th:field="${registration.birthday}"><br>
+                    </div>
+
+                    <div class="input">
+
+                        <label>Gender:</label><br>
+                        <label>male   </label>
+                        <input th:type="radio" th:field="${registration.gender}" th:value="Male">
+                        <label>female </label>
+                        <input th:type="radio" th:field="${registration.gender}" th:value="Female"><br>
+                    </div>
+
+                    <div class="input">
+                        <label>Address</label>
+                        <input th:type="textarea" th:filed="${registration.address} ">
+
+                    </div>
+
+
+                    <input type="submit" th:value="Submit">
+
+
+                </fieldset>
+            </form>
+
+        </div>
+</body>
+</html>
