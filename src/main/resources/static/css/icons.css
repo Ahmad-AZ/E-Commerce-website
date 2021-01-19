@@ -10,3 +10,15 @@
 .fa fa-remove:hover {
     background-color: darkgray;
 }
+.quantity{
+    width: 5px;
+    margin: auto;
+}
+.minus,plus{
+
+    display: inline-block;
+    padding: 2px;
+
+
+}
+

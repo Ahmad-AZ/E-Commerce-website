@@ -44,7 +44,7 @@ public class CartController {
        Item item=  itemRepository.findById(id).get();
 
 
-         cart.setItems(item);  // TODO: saving the item in the cart
+        // cart.setItems(item);  // TODO: saving the item in the cart
 
 
         // Code here

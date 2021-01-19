@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script  th:src="@{/js/dataBind.js}"></script>
 
 </head>
 
@@ -32,12 +33,18 @@
             <tr th:each=" ItemList:${items}">
                 <td th:text="${ItemList.name}"/>
                 <div>
-                    <td> <input type="number" name="quantity" min="0" value="1" /></td>
+                    <td>
+                        <div class="quantity">
+                            <button id="minus" class="minus" type="button">-</button>
+                            <input type="text"  id="input" value="0">
+                            <button id="plus" class="plus" type="button">+</button>
+                        </div>
+                    </td>
 
                     <td ><strong th:text="'€'+${ItemList.price}"></strong></td>
                 </div>
 
-                <td> <i class="fas fa-trash-alt mr-1"></i>  </td>
+                <td> <i class="fa fa-trash "></i>  </td>
             </tr>
             </tbody>
 
@@ -48,5 +55,6 @@
 
 
 
+          <script type="text/javascript" th:src="@{js/dataBind.js}"></script>
 </body>
 </html>
