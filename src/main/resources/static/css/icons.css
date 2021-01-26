@@ -1,24 +1,54 @@
 
-.fa fa-remove {
+.fa fa-trash{
     background-color: gray;
     color: white;
-    font-size: 6px;
+    font-size: 7px;
     cursor: pointer;
 }
 
 /* Darker background on mouse-over */
-.fa fa-remove:hover {
+.fa fa-trash:hover {
     background-color: darkgray;
+    color: black;
 }
-.quantity{
-    width: 5px;
-    margin: auto;
-}
-.minus,plus{
 
+
+
+.minus{
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid red;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
     display: inline-block;
-    padding: 2px;
+}
 
+
+
+.minus:hover{
+    background-color: red;
+    color: white;
 
 }
 
+
+.plus{
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid darkgreen;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+
+.plus:hover{
+    background-color: green;
+    color: white;
+
+}

@@ -11,18 +11,16 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "cart_seq")
     private long id;
-                                                           // if we removed the cart , the items will be also removed
+
+    // if we removed the cart , the items will be also removed
     @OneToMany(mappedBy = "cart",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Item> items;
 
-
-
-
-
-
-
     public Cart() {
     }
+
+
+
 
 
     public long getId() {
@@ -34,9 +32,6 @@ public class Cart {
     }
 
 
-
-
-
     public List<Item> getItems() {
         return items;
     }
@@ -45,4 +40,10 @@ public class Cart {
 
         this.items.add(item);
     }
+
+
+
+
+
+
 }

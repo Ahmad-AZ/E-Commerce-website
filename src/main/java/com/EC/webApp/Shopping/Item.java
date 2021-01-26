@@ -1,5 +1,6 @@
 package com.EC.webApp.Shopping;
 
+import com.EC.webApp.Shopping.Cart;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -17,7 +18,9 @@ public class Item {
     private String price;
 
 
+
     @ManyToOne
+
     private Cart cart;
 
     public Cart getCart() {

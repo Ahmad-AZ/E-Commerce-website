@@ -9,10 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
-import java.util.List;
-import java.util.Optional;
-
 @Controller
 @RequestMapping("/cart")
 public class CartController {
@@ -26,7 +22,8 @@ public class CartController {
 
     public String showCart(Model model){
 
-        List<Item> items= itemRepository.findAll();
+
+       Item items= itemRepository.findById(1L).get();
 
 
         model.addAttribute("items",items);
@@ -40,8 +37,14 @@ public class CartController {
 
     public String saveItemInTheCart(@PathVariable long id, RedirectAttributes redirectAttributes){
 
-       Cart cart= new Cart();
-       Item item=  itemRepository.findById(id).get();
+
+
+     Item item=  itemRepository.findById(id).get();
+    // Cart cart= cartRepository.findById(1L).get();
+     //item.setCart(cart);
+    // itemRepository.save(item);
+
+
 
 
         // cart.setItems(item);  // TODO: saving the item in the cart

@@ -1,4 +1,4 @@
 package com.EC.webApp.controllers;
 
-public class OwnerController {
+public class OwnerController { // for the owner has rule
 }
