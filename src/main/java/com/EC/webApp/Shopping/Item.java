@@ -17,10 +17,7 @@ public class Item {
     @Pattern(regexp = "^[0-9]+([.][0-9]{1,2})?",message = "Expected Price: 2, 2.99, 22.99")
     private String price;
 
-
-
     @ManyToOne
-
     private Cart cart;
 
     public Cart getCart() {

@@ -3,7 +3,6 @@ package com.EC.webApp.Shopping;
 
 import javax.persistence.*;
 import java.util.List;
-
 @Entity
 public class Cart {
 
@@ -18,10 +17,6 @@ public class Cart {
 
     public Cart() {
     }
-
-
-
-
 
     public long getId() {
         return id;

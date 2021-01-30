@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
@@ -18,8 +20,8 @@ public class CustomerController {
 
     //TODO: create a method to display login form
 
-    @Autowired
-    RegistrationData registrationData;
+   @Autowired
+   RegistrationData registrationData;
 
     @GetMapping("/new")
     public String login(Model model){
@@ -41,7 +43,23 @@ public class CustomerController {
     @PostMapping("/save")
     public String saveForm( Registration registration  ,  RedirectAttributes redirect){
 
-        registrationData.save(registration);
+
+
+        List<Registration> allUsers= registrationData.findAll();
+
+        for ( Registration user: allUsers) {
+            if (user.getEmail().equals(registration.getEmail())){
+
+                System.out.println("the user is already exists");
+
+            }
+            else {
+                registrationData.save(registration);
+            }
+        }
+
+
+
 
         redirect.addFlashAttribute("regForm",registration); // temporary to display the data
 
